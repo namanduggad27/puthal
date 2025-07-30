@@ -1,0 +1,204 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+    color: #1166a7;
+}
+
+.navbar {
+    height: 100px;
+    background-color: #1166a7;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-right: 0;
+    color: #fff; /* fixed spelling */
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.here {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px;
+    justify-content: space-between;
+    background-color: #eaf4fb;
+    align-items: center;
+    gap: 40px;
+}
+
+.here-on h1 {
+    font-size: 40px;
+    margin: 0 0 20px;
+    color: #1166a7;
+}
+
+.here-on p {
+    line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #1166a7;
+}
+
+button {
+    color: #1166a7;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: 2px solid #1166a7;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background 0.2s, color 0.2s;
+}
+
+button:hover {
+    background: #1166a7;
+    color: #fff;
+}
+
+.here-image .phone {
+    background-color: #eaf4fb;
+    padding: 20px;
+    width: 320px;
+    max-width: 100%;
+    height: 400px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    color: #1166a7;
+}
+
+.phone h2 {
+    color: #1166a7;
+    margin-bottom: 30px;
+}
+
+.phone .moods {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.phone .meditation {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+.features {
+    display: grid;
+    padding: 40px 60px;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #1166a7;
+    gap: 30px;
+}
+
+.feature {
+    text-align: center;
+    background: #fff;
+    border-radius: 18px;
+    padding: 20px 10px;
+    color: #1166a7;
+    box-shadow: 0 2px 8px rgba(17,102,167,0.08);
+}
+
+.feature .icon {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin: 10px 0 5px;
+    color: #1166a7;
+}
+
+.feature p {
+    color: #1166a7;
+    font-size: 15px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1100px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 20px;
+    }
+    .here {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px 10px;
+        text-align: center;
+    }
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .logo {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    .here {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .features {
+        grid-template-columns: 1fr;
+        padding: 20px 5px;
+    }
+    .here-image .phone {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .here-on h1 {
+        font-size: 28px;
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+    .phone .meditation {
+        font-size: 36px;
+    }
+}

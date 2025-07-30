@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyB_Dm3sWb-C52LkzCfP2Fvq349yP7uvzPA",
+        authDomain: "authentication-da45d.firebaseapp.com",
+        projectId: "authentication-da45d",
+        storageBucket: "authentication-da45d.appspot.com",
+        messagingSenderId: "1002049123229",
+        appId: "1:1002049123229:web:2502bd482a935230583574"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">💟puthal</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Features</a>
+            <a href="#">Join us</a>
+            <a href="#">Contact</a>
+            <button id="logoutBtn" style="margin-left:20px; background:#fff; color:#1166a7; border:1px solid #1166a7; border-radius:6px; padding:6px 16px; cursor:pointer;">Logout</button>
+        </nav>
+    </header>
+    <main>
+        <section class="here">
+            <div class="here-on">
+                <h1>Mental health <br>well-being<br> reimagined</h1>
+                <p>Empowering individuals to prioritize <br>their mental well-being through <br>innovative technology.</p>
+                <div>
+                    <button>Download on the App Store</button>
+                    <button>Get it on Google Play</button>
+                </div>
+                <div id="welcomeUser" style="margin-top:20px; font-size:18px; color:#1166a7;"></div>
+            </div>
+            <div class="here-image">
+                <div class="phone">
+                    <h2>Puthal</h2>
+                    <p>Welcome back</p><br>
+                    <p>How are you feeling?</p>
+                    <div class="moods">
+                        😊 😐 😞 😠 
+                    </div>
+                    <div class="meditation">🧘‍♂</div>
+                </div>
+            </div> 
+        </section>
+        <section class="features">
+            <div class="feature">
+                <div class="icon">🧠</div>
+                <h3>AI Mood Tracking</h3>
+                <p>AI-driven mood monitoring</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🌿</div>
+                <h3>Mindfulness Exercises</h3>
+                <p>Exercises for inner peace</p>
+            </div>
+            <div class="feature">
+                <div class="icon">➕</div>
+                <h3>Therapy & Counseling</h3>
+                <p>Professional support & resources</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🤝</div>
+                <h3>Community Support</h3>
+                <p>Connect with others</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                // Show user's name or email
+                document.getElementById('welcomeUser').textContent =
+                    "Welcome, " + (user.displayName ? user.displayName : user.email) + "!";
+            } else {
+                // Not logged in, redirect to login
+                window.location.href = "index.html";
+            }
+        });
+
+        document.getElementById('logoutBtn').onclick = function() {
+            firebase.auth().signOut().then(function() {
+                window.location.href = "index.html";
+            });
+        };
+    </script>
+</body>
+</html>
